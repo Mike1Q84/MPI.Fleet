@@ -1,0 +1,15 @@
+# Compile the source code
+mpicc -lm -o <output binary file> 2.Fleet_Sim.c
+# For example, if output binary file name is Fleet_Sim
+# Above command should be
+mpicc -lm -o Fleet_Sim 2.Fleet_Sim.c
+
+# Run the binary program
+mpirun -np <number of vessels> <output binary file>
+# For example, if output binary file name is Fleet_Sim and the number of vessels is 6
+# Above command should be
+mpirun -np 6 Fleet_Sim
+
+# Attention
+# Excessive number of vessels will result “The system limit on number of pipes a process can open was reached”.
+# Normally, the number of vessels should be no more than 250. 
